@@ -13,13 +13,12 @@ secrchBtn.addEventListener("click",function(){
 
 displaySongs = songs => {
     const displaySong = document.getElementById('display');
-    
+    displaySong.innerText='';
     songs.forEach(song => {
         console.log(song);
         const songDiv = document.createElement('div');
         songDiv.className=("single-result row align-items-center my-3 p-3");
         const artistName = song.artist;
-        const albumTitle = song.album;
         songDiv.innerHTML=`
         <div class="col-md-9">
         <h3 class="lyrics-name">${song.title}</h3>
@@ -33,7 +32,8 @@ displaySongs = songs => {
         Your browser does not support the HTML5 Audio element.
          </audio>
         `;
-        displaySong.appendChild(songDiv)
+        displaySong.appendChild(songDiv);
+        displaySong.style.display="block";
     });
 }
 
